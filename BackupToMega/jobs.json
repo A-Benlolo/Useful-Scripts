@@ -1,0 +1,3 @@
+[
+    { "src": "/var/lib/vz/dump", "dst": "/Backups", "name": "VM_LXC", "compression_level": 1 }
+]
