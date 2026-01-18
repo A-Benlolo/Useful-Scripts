@@ -1,0 +1,17 @@
+[Unit]
+Description=ICMP Watchdog Shutdown Service
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=root
+CapabilityBoundingSet=CAP_NET_RAW CAP_SYS_BOOT
+AmbientCapabilities=CAP_NET_RAW CAP_SYS_BOOT
+NoNewPrivileges=true
+# Replace with listen.py or send.py
+ExecStart=/usr/bin/python3 /usr/local/sbin/icmp-watchdog
+
+[Install]
+WantedBy=multi-user.target
